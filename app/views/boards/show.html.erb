@@ -1,17 +1,24 @@
 <%= render 'stickies/form' %>
 
-<table>
-  <tbody>
-    <% @board.stickies.each do |sticky| %>
-      <tr>
-        <td><%= sticky.id %></td>
-        <td><%= sticky.group %></td>
-        <td><%= sticky.author %></td>
-        <td><%= sticky.comment %></td>
-      </tr>
+<div>
+  <h2>Keep</h2>
+  <div class="row">
+    <% @board.select_stickies(:keep).each do |sticky| %>
+      <%= render partial: 'stickies/sticky', locals: { sticky: sticky } %>
     <% end %>
-  </tbody>
-</table>
+  </div>
+  <h2>Problem</h2>
+  <div class="row">
+    <% @board.select_stickies(:problem).each do |sticky| %>
+      <%= render partial: 'stickies/sticky', locals: { sticky: sticky } %>
+    <% end %>
+  </div>
+  <h2>Try</h2>
+  <div class="row">
+    <% @board.select_stickies(:try).each do |sticky| %>
+      <%= render partial: 'stickies/sticky', locals: { sticky: sticky } %>
+    <% end %>
+  </div>
+<div>
 
-<%= link_to 'New', new_board_sticky_path(@board.id) %>
 <%= link_to 'Back', boards_path %>

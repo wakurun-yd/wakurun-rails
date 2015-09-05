@@ -9,4 +9,8 @@
 
 class Board < ActiveRecord::Base
   has_many :stickies, dependent: :destroy
+
+  def select_stickies(group)
+    stickies.select { |s| s.group == group.to_s }
+  end
 end
