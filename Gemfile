@@ -37,6 +37,7 @@ gem 'active_decorator'
 
 group :production do
   gem 'rails_12factor'
+  gem 'puma'
 end
 
 
