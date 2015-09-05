@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  root 'boards#index'
+
+  resources :boards, only: [:index, :new, :create, :show, :destroy] do
+    resources :stickies, only: [:index, :new, :create, :destroy] 
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

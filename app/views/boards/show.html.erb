@@ -1,0 +1,17 @@
+<%= render 'stickies/form' %>
+
+<table>
+  <tbody>
+    <% @board.stickies.each do |sticky| %>
+      <tr>
+        <td><%= sticky.id %></td>
+        <td><%= sticky.group %></td>
+        <td><%= sticky.author %></td>
+        <td><%= sticky.comment %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New', new_board_sticky_path(@board.id) %>
+<%= link_to 'Back', boards_path %>
