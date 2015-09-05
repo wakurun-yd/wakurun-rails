@@ -8,19 +8,10 @@ class StickiesController < ApplicationController
     @stickies = Sticky.all
   end
 
-  # GET /stickies/1
-  # GET /stickies/1.json
-  def show
-  end
-
   # GET /stickies/new
   def new
     @sticky = Sticky.new
     @sticky.board = @board
-  end
-
-  # GET /stickies/1/edit
-  def edit
   end
 
   # POST /stickies
@@ -35,20 +26,6 @@ class StickiesController < ApplicationController
         format.json { render :show, status: :created, location: @sticky }
       else
         format.html { render :new }
-        format.json { render json: @sticky.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /stickies/1
-  # PATCH/PUT /stickies/1.json
-  def update
-    respond_to do |format|
-      if @sticky.update(sticky_params)
-        format.html { redirect_to @sticky, notice: 'Sticky was successfully updated.' }
-        format.json { render :show, status: :ok, location: @sticky }
-      else
-        format.html { render :edit }
         format.json { render json: @sticky.errors, status: :unprocessable_entity }
       end
     end
