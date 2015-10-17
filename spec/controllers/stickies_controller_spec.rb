@@ -52,13 +52,6 @@ RSpec.describe StickiesController, type: :controller do
     end
   end
 
-  describe "GET #new" do
-    it "assigns a new sticky as @sticky" do
-      get :new, {}, valid_session
-      expect(assigns(:sticky)).to be_a_new(Sticky)
-    end
-  end
-
   describe "GET #edit" do
     it "assigns the requested sticky as @sticky" do
       sticky = Sticky.create! valid_attributes

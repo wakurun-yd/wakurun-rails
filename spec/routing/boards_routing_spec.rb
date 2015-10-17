@@ -15,20 +15,8 @@ RSpec.describe BoardsController, type: :routing do
       expect(:get => "/boards/1").to route_to("boards#show", :id => "1")
     end
 
-    it "routes to #edit" do
-      expect(:get => "/boards/1/edit").to route_to("boards#edit", :id => "1")
-    end
-
     it "routes to #create" do
       expect(:post => "/boards").to route_to("boards#create")
-    end
-
-    it "routes to #update via PUT" do
-      expect(:put => "/boards/1").to route_to("boards#update", :id => "1")
-    end
-
-    it "routes to #update via PATCH" do
-      expect(:patch => "/boards/1").to route_to("boards#update", :id => "1")
     end
 
     it "routes to #destroy" do
