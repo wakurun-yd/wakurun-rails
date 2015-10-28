@@ -13,4 +13,6 @@
 
 class Sticky < ActiveRecord::Base
   belongs_to :board
+  validates(:comment, presence: true)
+  validates(:author, presence: true)
 end
