@@ -25,7 +25,7 @@ class StickiesController < ApplicationController
         format.html { redirect_to @board, notice: 'Sticky was successfully created.' }
         format.json { render :show, status: :created, location: @sticky }
       else
-        format.html { render :new }
+        format.html { render 'boards/show' }
         format.json { render json: @sticky.errors, status: :unprocessable_entity }
       end
     end

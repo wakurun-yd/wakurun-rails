@@ -23,4 +23,9 @@ RSpec.describe Board, type: :model do
     before { @board.title = " " }
     it { should_not be_valid }
   end
+
+  describe "when title is too long" do
+    before { @board.title = "a" * 21 }
+    it { should_not be_valid }
+  end
 end

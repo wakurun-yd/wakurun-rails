@@ -9,7 +9,7 @@
 
 class Board < ActiveRecord::Base
   has_many :stickies, dependent: :destroy
-  validates(:title, presence: true)
+  validates :title, presence: true, length: { maximum: 20 }
 
   def select_stickies(group)
     stickies.select { |s| s.group == group.to_s }

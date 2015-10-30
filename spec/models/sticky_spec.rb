@@ -36,4 +36,14 @@ RSpec.describe Sticky, type: :model do
     before { @sticky.author = " " }
     it { should_not be_valid }
   end
+
+  describe "when comment is too long" do
+    before { @sticky.comment = "a" * 151 }
+    it { should_not be_valid }
+  end
+
+  describe "when author is too long" do
+    before { @sticky.author = "a" * 21 }
+    it { should_not be_valid }
+  end
 end
