@@ -10,5 +10,22 @@
 require 'rails_helper'
 
 RSpec.describe Board, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  before { @board = Board.new(title: "Example board") }
+
+  subject { @board }
+
+  it { should respond_to(:title) }
+
+  it { should be_valid }
+
+  describe "when title is not present" do
+    before { @board.title = " " }
+    it { should_not be_valid }
+  end
+
+  describe "when title is too long" do
+    before { @board.title = "a" * 21 }
+    it { should_not be_valid }
+  end
 end

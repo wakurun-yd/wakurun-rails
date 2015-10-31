@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe "boards/index", type: :view do
   before(:each) do
     assign(:boards, [
-      Board.create!(),
-      Board.create!()
+      Board.create!(title: "Example board 1"),
+      Board.create!(title: "Example board 2")
     ])
   end
 
