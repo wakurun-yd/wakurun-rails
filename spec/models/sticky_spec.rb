@@ -24,6 +24,7 @@ RSpec.describe Sticky, type: :model do
   it { should respond_to(:comment) }
   it { should respond_to(:author) }
   it { should respond_to(:board_id) }
+  it { should respond_to(:like) }
 
   it { should be_valid }
 
