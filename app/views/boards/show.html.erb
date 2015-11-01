@@ -1,6 +1,10 @@
-<%= render 'stickies/form' %>
 
 <div>
+  <div class="row">
+    <div class="col-md-8">
+      <%= render 'stickies/form' %>
+    </div>
+  </div>
   <h2>Keep</h2>
   <div class="row">
     <% @board.select_stickies(:keep).each do |sticky| %>
