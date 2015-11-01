@@ -1,0 +1,9 @@
+{
+  "name": "wakurun-yd",
+  "env": {
+    "RAILS_ENV": "production"
+  },
+  "scripts": {
+    "postdeploy": "bundle exec rake db:migrate"
+  }
+}
