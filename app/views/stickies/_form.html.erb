@@ -16,5 +16,5 @@
   <%= f.select :group, { Keep: 'keep', Problem: 'problem', Try: 'try'} %>
   <%= f.text_field :comment %>
   <%= f.text_field :author %>
-  <%= f.submit %>
+  <%= f.submit name: "create_btn" %>
 <% end %>
