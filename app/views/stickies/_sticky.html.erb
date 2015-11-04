@@ -4,9 +4,18 @@
       <h3><%= sticky.comment %></h3>
       <span>@<%= sticky.author %></span>
     </div>
-    <%= bootstrap_form_for([@board, sticky]) do |fl| %>
-      <%= sticky.like %> Liked
-      <%= fl.submit "+1", name: "like_btn", class: "btn btn-primary" %>
-    <% end %>
+    <div class="row">
+      <div class="col-xs-8 text-right">
+        <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+        <%= sticky.like %>
+      </div>
+      <div class="col-xs-2">
+        <div class="row">
+          <%= bootstrap_form_for([@board, sticky]) do |fl| %>
+          <%= fl.submit "いいね!", name: "like_btn", class: "btn btn-default btn-sm" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
