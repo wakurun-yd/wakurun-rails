@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "boards/edit", type: :view do
   before(:each) do
-    @board = assign(:board, Board.create!())
+    @board = assign(:board, Board.create!(title: "Example board"))
   end
 
   it "renders the edit board form" do

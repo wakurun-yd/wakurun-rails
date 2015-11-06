@@ -13,4 +13,6 @@
 
 class Sticky < ActiveRecord::Base
   belongs_to :board
+  validates :comment, presence: true, length: { maximum: 150 }
+  validates :author, presence: true, length: { maximum: 20 }
 end
