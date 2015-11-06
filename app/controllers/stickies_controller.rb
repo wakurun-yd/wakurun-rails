@@ -18,7 +18,7 @@ class StickiesController < ApplicationController
     set_sticky
     set_board
     if params[:like_btn]
-      @sticky.like += 1
+      @sticky.increment :like
       @sticky.save
     end
     redirect_to @board
