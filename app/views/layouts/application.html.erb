@@ -8,8 +8,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= nav_bar brand: "わくわくるんるん横浜道場", responsive: true %>
-<%= yield %>
+  <%= nav_bar brand: "わくわくるんるん横浜道場", responsive: true %>
+  <div class="container">
+    <%= yield %>
+  </div>
 </div>
 </body>
 </html>
