@@ -15,10 +15,9 @@ require 'rails_helper'
 
 RSpec.describe Sticky, type: :model do
 
-  before { @sticky = Sticky.new(group: "Keep", comment: "Example comment",
-                                author: "example author", board_id: 1) }
+  let(:sticky) { FactoryGirl.create :sticky }
 
-  subject { @sticky }
+  subject { sticky }
 
   it { should respond_to(:group) }
   it { should respond_to(:comment) }
@@ -29,22 +28,22 @@ RSpec.describe Sticky, type: :model do
   it { should be_valid }
 
   describe "when comment is not present" do
-    before { @sticky.comment = " " }
+    before { sticky.comment = " " }
     it { should_not be_valid }
   end
 
   describe "when author is not present" do
-    before { @sticky.author = " " }
+    before { sticky.author = " " }
     it { should_not be_valid }
   end
 
   describe "when comment is too long" do
-    before { @sticky.comment = "a" * 151 }
+    before { sticky.comment = "a" * 151 }
     it { should_not be_valid }
   end
 
   describe "when author is too long" do
-    before { @sticky.author = "a" * 21 }
+    before { sticky.author = "a" * 21 }
     it { should_not be_valid }
   end
 end
