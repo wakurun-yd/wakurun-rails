@@ -29,7 +29,6 @@ class StickiesController < ApplicationController
   def create
     @sticky = Sticky.new(sticky_params)
     @sticky.board = @board
-    @sticky.like = 0
 
     respond_to do |format|
       if @sticky.save
