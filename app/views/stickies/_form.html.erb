@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-<button id="toggle_sticky_input" type="button" class="btn btn-default btn-lg">
+<button id="toggle_sticky_input" type="button" class="btn btn-default">
   入力欄の開閉
 </button>
 <div id="sticky_input" style="display :none;">
@@ -21,11 +21,4 @@
   <%= f.text_field :author %>
   <%= f.submit "KPTを追加する"%>
 <% end %>
-<script type="text/javascript">
-  $(function(){
-    $('#toggle_sticky_input').on('click', function(){
-      $('#sticky_input').toggle();
-    });
-  });
-</script>
 </div>
