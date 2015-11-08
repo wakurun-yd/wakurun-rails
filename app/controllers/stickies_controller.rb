@@ -14,6 +14,16 @@ class StickiesController < ApplicationController
     @sticky.board = @board
   end
 
+  def update
+    set_sticky
+    set_board
+    if params[:like_btn]
+      @sticky.increment :like
+      @sticky.save
+    end
+    redirect_to @board
+  end
+
   # POST /stickies
   # POST /stickies.json
   def create

@@ -4,5 +4,16 @@
       <h3><%= sticky.comment %></h3>
       <span>@<%= sticky.author %></span>
     </div>
+    <p>
+      <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+      <%= sticky.like %>
+    </p>
+    <p>
+      <%= bootstrap_form_for([@board, sticky]) do |fl| %>
+          <%= fl.button( name: "like_btn", class: "btn btn-default btn-sm") do %>
+            <%= content_tag :span, "いいね", class: "glyphicon glyphicon-thumbs-up" %>
+          <% end %>
+      <% end %>
+    </p>
   </div>
 </div>

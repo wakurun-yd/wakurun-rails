@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150904164253) do
+ActiveRecord::Schema.define(version: 20151031073200) do
 
   create_table "boards", force: :cascade do |t|
     t.string   "title"
@@ -24,8 +24,9 @@ ActiveRecord::Schema.define(version: 20150904164253) do
     t.string   "comment"
     t.string   "author"
     t.integer  "board_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "like",       default: 0, null: false
   end
 
 end
