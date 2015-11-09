@@ -6,19 +6,19 @@
     </div>
   </div>
   <h2>Keep</h2>
-  <div class="row keep">
+  <div class="row area-keep">
     <% @board.select_stickies(:keep).each do |sticky| %>
       <%= render partial: 'stickies/sticky', locals: { sticky: sticky } %>
     <% end %>
   </div>
   <h2>Problem</h2>
-  <div class="row problem">
+  <div class="row area-problem">
     <% @board.select_stickies(:problem).each do |sticky| %>
       <%= render partial: 'stickies/sticky', locals: { sticky: sticky } %>
     <% end %>
   </div>
   <h2>Try</h2>
-  <div class="row try">
+  <div class="row area-try">
     <% @board.select_stickies(:try).each do |sticky| %>
       <%= render partial: 'stickies/sticky', locals: { sticky: sticky } %>
     <% end %>
