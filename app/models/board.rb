@@ -12,6 +12,6 @@ class Board < ActiveRecord::Base
   validates :title, presence: true, length: { maximum: 20 }
 
   def select_stickies(group)
-    stickies.select { |s| s.group == group.to_s }
+    stickies.order(like: :desc, created_at: :asc).select { |s| s.group == group.to_s }
   end
 end
