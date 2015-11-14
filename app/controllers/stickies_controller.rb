@@ -1,6 +1,6 @@
 class StickiesController < ApplicationController
   before_action :set_sticky, only: [:show, :edit, :update, :destroy]
-  before_action :set_board, only: [:new, :create]
+  before_action :set_board, only: [:new, :create, :destroy]
 
   # GET /stickies
   # GET /stickies.json
@@ -45,8 +45,9 @@ class StickiesController < ApplicationController
   # DELETE /stickies/1.json
   def destroy
     @sticky.destroy
+
     respond_to do |format|
-      format.html { redirect_to stickies_url, notice: 'Sticky was successfully destroyed.' }
+      format.html { redirect_to @board, notice: 'Sticky was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
