@@ -16,9 +16,10 @@
     </div>
   <% end %>
 
-  <%= f.select :group, { Keep: 'keep', Problem: 'problem', Try: 'try'} %>
+  <%= f.text_field :author, value: session[:author] %>
+  <%= f.select :group, { Keep: 'keep', Problem: 'problem', Try: 'try'},
+               selected: session[:group] %>
   <%= f.text_field :comment %>
-  <%= f.text_field :author %>
   <%= f.submit "KPTを追加する", name: "create_btn" %>
 <% end %>
 </div>

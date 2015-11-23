@@ -30,6 +30,9 @@ class StickiesController < ApplicationController
     @sticky = Sticky.new(sticky_params)
     @sticky.board = @board
 
+    session[:author] = @sticky.author
+    session[:group] = @sticky.group
+
     respond_to do |format|
       if @sticky.save
         format.html { redirect_to @board, notice: 'Sticky was successfully created.' }
