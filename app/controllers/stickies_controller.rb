@@ -2,12 +2,6 @@ class StickiesController < ApplicationController
   before_action :set_sticky, only: [:show, :edit, :update, :destroy]
   before_action :set_board, only: [:new, :create, :destroy]
 
-  # GET /stickies
-  # GET /stickies.json
-  def index
-    @stickies = Sticky.all
-  end
-
   # GET /stickies/new
   def new
     @sticky = Sticky.new
